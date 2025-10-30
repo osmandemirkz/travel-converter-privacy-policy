@@ -1,2 +1,1 @@
-# travel-converter-privacy-policy
-Privacy policy page for the Travel Converter mobile app. This repository hosts the privacy policy HTML file and is used to provide a public URL for Google Play.
+# Privacy Policy – Travel Converter Travel Converter does not collect, store, or share any personal data. - No user accounts - No personal information - No tracking or analytics - No third-party data collection The app only performs on-device currency conversions. Your data stays on your device and is never sent to any server.
