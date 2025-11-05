@@ -1,0 +1,57 @@
+{
+  "expo": {
+    "name": "TRAVEL CONVERTER",
+    "slug": "travel-converter",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "travelconverter",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": false,
+    "jsEngine": "hermes",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.travelconverter",
+      "buildNumber": "2",
+      "config": {
+        "googleMobileAdsAppId": "ca-app-pub-8780195722830315~4071218933"
+      },
+      "infoPlist": {
+        "NSUserTrackingUsageDescription": "Bu uygulama, size kişiselleştirilmiş reklamlar sunmak için izninizi talep ediyor.",
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.anonymous.travelconverter",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "config": {
+        "googleMobileAdsAppId": "ca-app-pub-8780195722830315~6988671095"
+      }
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      "expo-web-browser",
+      [
+        "react-native-google-mobile-ads",
+        {
+          "androidAppId": "ca-app-pub-8780195722830315~6988671095",
+          "iosAppId": "ca-app-pub-8780195722830315~4071218933"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "052a228d-4aa7-4140-a1ab-9020498f8f11"
+      }
+    },
+    "owner": "osmandemir"
+  }
+}
