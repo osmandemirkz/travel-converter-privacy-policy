@@ -56,25 +56,5 @@ target 'TRAVELCONVERTER' do
       :mac_catalyst_enabled => false,
       :ccache_enabled => ccache_enabled?(podfile_properties),
     )
-    
-    # Fix for Folly build issues
-    installer.pods_project.targets.each do |target|
-      target.build_configurations.each do |config|
-        config.build_settings['CLANG_CXX_LANGUAGE_STANDARD'] = 'c++17'
-        config.build_settings['CLANG_CXX_LIBRARY'] = 'libc++'
-        
-        # Add header search paths for Folly
-        header_search_paths = config.build_settings['HEADER_SEARCH_PATHS'] || ['$(inherited)']
-        header_search_paths << '$(PODS_ROOT)/boost'
-        header_search_paths << '$(PODS_ROOT)/RCT-Folly'
-        header_search_paths << '$(PODS_ROOT)/RCT-Folly/folly'
-        config.build_settings['HEADER_SEARCH_PATHS'] = header_search_paths.uniq
-        
-        # Add preprocessor definitions
-        preprocessor_defs = config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] || ['$(inherited)']
-        preprocessor_defs << 'FOLLY_HAVE_CLOCK_GETTIME=1' unless preprocessor_defs.include?('FOLLY_HAVE_CLOCK_GETTIME=1')
-        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] = preprocessor_defs
-      end
-    end
   end
 end
